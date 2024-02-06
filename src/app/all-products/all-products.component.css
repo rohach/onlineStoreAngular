@@ -1,0 +1,129 @@
+.products_heading {
+  color: var(--bg);
+  font-size: 2rem;
+  font-family: var(--rock);
+}
+.card_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container .card {
+  position: relative;
+  width: calc(90% / 4);
+  height: 350px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 0.5rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.container .card .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+}
+
+.container .card:hover .content {
+  transform: translateY(-20px);
+}
+
+.container .card .content .imgBx {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  /* overflow: hidden; */
+}
+
+.container .card .content .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.container .card .content .contentBx .name {
+  color: #fff;
+  text-transform: uppercase;
+  /* letter-spacing: 2px; */
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 20px 0 10px;
+
+  -webkit-line-clamp: 2 !important;
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.description {
+  -webkit-line-clamp: 2;
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.8;
+  font-size: 0.7rem !important;
+}
+.price {
+  font-size: 0.7rem !important;
+}
+.container .card .content .contentBx h3 span {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+.container .card .sci {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container .card .sci button {
+  margin: 0 20px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+  cursor: pointer;
+  width: 50%;
+  background-color: var(--bg);
+  color: white !important;
+  height: 30px;
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 7px !important;
+}
+
+.container .card:hover .sci button {
+  transform: translateY(0px);
+  opacity: 1;
+}

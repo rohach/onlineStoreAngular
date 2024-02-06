@@ -1,0 +1,35 @@
+<div class="products_heading">Our <span style="color: var(--bg) !important;">Products</span></div>
+<br>
+<div class="card_container">
+    <section>
+        <div class="container">
+            <div class="card" *ngFor="let product of products">
+                <a [routerLink]="['/products/', product.id]">
+                    <div class="content">
+                        <div class="imgBx">
+                            <img [src]="getImageUrl(product)" alt="{{ product.name }}" />
+                        </div>
+                        <div class="contentBx">
+                            <p>
+                                <b class="name">
+                                    {{ product.name }}
+                                </b>
+                            </p>
+                        </div>
+                        <h3 class="price"><b>Price: </b>{{ product.price | currency }}</h3>
+                        <p class="description">
+                            <b>Description: </b>{{ product.description }}
+                        </p>
+                    </div>
+                </a>
+                <ul class="sci">
+                    <button (click)="addToCart(product)" type="button" name="item-1-button" id="item-1-button">
+                        Add to Cart
+                    </button>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+<br>
+<hr>

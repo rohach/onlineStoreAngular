@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none !important;
+  width: 95%;
+  margin: 0 auto;
+  font-family: "RocknRoll One", sans-serif;
+  color: #343434 !important;
+  font-size: 98%;
+}
+:root {
+  --bg: #e12d18;
+  --mb: 0.5rem;
+  --rock: "RocknRoll One", sans-serif;
+  --padding: 0.3rem 1.5rem;
+  --border: 7px;
+  --white: #fff;
+  --radius: 7px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "RocknRoll One", sans-serif !important;
+}
+button {
+  border-radius: var(--radius);
+  outline: none !important;
+  width: max-content;
+  border-radius: var(--border);
+}
+.btn_primary {
+  background-color: var(--bg);
+  color: white !important;
+  padding: var(--padding);
+  border: 2px solid transparent;
+}
+.btn_secondary {
+  background-color: white;
+  color: var(--bg) !important;
+  padding: var(--padding);
+  font-weight: 500;
+  border: 2px solid var(--bg);
+}
+.topic {
+  color: var(--bg) !important;
+  font-family: var(--rock) !important;
+}

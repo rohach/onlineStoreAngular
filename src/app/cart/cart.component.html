@@ -1,0 +1,71 @@
+<div style="margin-top: 6rem; font-size: 2rem">Shopping Cart</div>
+<div class="shopping-cart">
+    <div class="column-labels">
+        <label class="product-image">Image</label>
+        <label class="product-details">Product</label>
+        <label class="product-price">Price</label>
+        <label class="product-quantity">Quantity</label>
+        <label class="product-removal">Remove</label>
+        <label class="product-line-price">Total</label>
+    </div>
+
+    <div *ngIf="tempList.length > 0; else shortMessage">
+        <div class="product" *ngFor="let singleitem of tempList; let i = index">
+            <div class="product-image">
+                <img [src]="getImageUrlCart(singleitem)" />
+            </div>
+
+            <div class="product-details">
+                <div class="product-title">{{ singleitem.name }}</div>
+                <p class="product-description">{{ singleitem.description }}</p>
+            </div>
+
+            <div class="product-price">
+                <div class="discounted_price">
+                    {{ singleitem.price | currency }}
+                </div>
+                <div class="discount_amount">{{ singleitem.discount }}% OFF</div>
+            </div>
+            <div class="product-quantity">
+                <input type="number" value="1" min="1" (change)="onDropdownChange($event, i)" />
+            </div>
+            <div class="product-removal">
+                <button class="remove-product" (click)="removeItem(i)">Remove</button>
+            </div>
+            <div class="product-line-price">
+                {{ singleitem.finalAmount | currency }}
+            </div>
+        </div>
+    </div>
+
+    <ng-template #shortMessage class="empty_cart">
+        <p class="empty_cart">Your Cart is empty!</p>
+        <a routerLink="/" class="continue_shopping">Continue Shopping.</a>
+    </ng-template>
+</div>
+
+<div class="totals">
+    <div class="totals-item">
+        <label>Subtotal</label>
+        <div class="totals-value" id="cart-subtotal">{{ subTotal | currency }}</div>
+    </div>
+    <div class="totals-item">
+        <label>Tax (5%)</label>
+        <div class="totals-value" id="cart-tax">
+            {{ taxTotal.toFixed(2) | currency : "USD" }}
+        </div>
+    </div>
+    <div class="totals-item">
+        <label>Shipping</label>
+        <div class="totals-value" id="cart-shipping">
+            {{ shippingTotal.toFixed(2) | currency : "USD" }}
+        </div>
+    </div>
+    <hr />
+    <div class="totals-item totals-item-total">
+        <label>Grand Total</label>
+        <div class="totals-value" id="cart-total">{{ grandTotal | currency }}</div>
+    </div>
+</div>
+
+<button class="checkout">Checkout</button>

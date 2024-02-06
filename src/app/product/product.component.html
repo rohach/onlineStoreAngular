@@ -1,0 +1,32 @@
+<main class="main">
+    <!-- Wrapper Section -->
+
+    <section class="section wrapper wrapper-section">
+        <a routerLink=""><button>Back</button></a>
+        <div class="container wrapper-column">
+            <div class="wrapper-figure">
+                <img [src]="getImageUrlSingle(finalProduct[0])" />
+            </div>
+            <div class="wrapper-content">
+                <div class="wrapper-inform">
+                    <span class="badge badge-darken">{{finalProduct[0].category}}</span>
+                    <h1 class="heading-sm font-bold">{{finalProduct[0].name}}</h1>
+                    <p class="text-md font-regular">
+                        {{finalProduct[0].description}}
+                    </p>
+                </div>
+                <div class="wrapper-detail">
+                    <div class="price">
+                        <span class="text-md font-semi">Price: {{finalProduct[0].price | currency}}</span>
+                        <h3 class="text-xxl font-bold">{{finalProduct.price |currency}}</h3>
+                    </div>
+                </div>
+                <a routerLink="">
+                    <div class="wrapper-action">
+                        <button class="btn btn-darken">Back to Home</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
